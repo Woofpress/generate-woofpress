@@ -4,18 +4,28 @@ replace_it(){
 
 	echo "Processing $1"
 
-	if [[ $1 != *".jpg"* && $1 != *".gif"* && $1 != *".png"* && $1 != *".svg"* && $1 != *".eot"* && $1 != *".ttf"* && $1 != *".woff"* && $1 != *".swf"* && $1 != *".xap"* && $1 != *".gz"* ]]; then
+	if [[
+		$1 != *".jpg"*
+		&& $1 != *".gif"*
+		&& $1 != *".png"*
+		&& $1 != *".svg"*
+		&& $1 != *".eot"*
+		&& $1 != *".ttf"*
+		&& $1 != *".woff"*
+		&& $1 != *".swf"*
+		&& $1 != *".xap"*
+		&& $1 != *".gz"*
+	]]; then
 
 		# make all the correct changes
-		sed -i.bak 's/WordPress/Worndpress/g' "$1"
+		sed -i.bak 's/WordPress/🐶️/g' "$1"
 
-		# https://github.com/worndpress/Worndpress/commit/a84bd3cdf4820079afcbe8c901d01780444e0773
-		sed -i.bak 's/capital_P_dangit/lowercase_p_and_also_an_n_dangit/g' "$1"
+		sed -i.bak 's/capital_P_dangit/actually_use_a_dog_emoji_please/g' "$1"
 		rm "$1".bak
 	fi
 }
 
-git clone git@github.com:worndpress/Worndpress.git srcgit
+git clone git@github.com:bradp/woofpress.git srcgit
 
 wget https://github.com/WordPress/WordPress/archive/master.zip
 yes | unzip master
