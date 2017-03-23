@@ -25,7 +25,7 @@ replace_it(){
 	fi
 }
 
-git clone git@github.com:bradp/woofpress.git srcgit
+git clone git@github.com:woofpress/woofpress.git srcgit
 
 wget https://github.com/WordPress/WordPress/archive/master.zip
 yes | unzip master
